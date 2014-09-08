@@ -24,6 +24,8 @@ INSTALLED_APPS = (
 
 ## Example Usage
 
+The best examples are in the [tests](https://github.com/richardasaurus/django-simple-activity/blob/master/src/tests/test_activity.py).
+
 
 Get **all** Activity Action records:
 
