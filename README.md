@@ -28,19 +28,19 @@ INSTALLED_APPS = (
 Get **all** Activity Action records:
 
 ```python
-actions = Action.objects.all()
+Action.objects.all()
 ```
 
 
 Get all **public** Activity Action records:
 ```python
-actions = Action.objects.public()
+Action.objects.public()
 ```
 
 Get all **private** Activity Action records, where the actor is a given user
 
 ```python
-actions = Action.objects.private(actor=user)  # user being a Django User model instance
+Action.objects.private(actor=user)  # user being a Django User model instance
 ```
 
 Here's an example use of `django-simple-activity` which uses [django signals](https://docs.djangoproject.com/en/dev/topics/signals/)
@@ -63,7 +63,7 @@ def new_user_activity(sender, **kwargs):
 ```
 
 
-## Running tests
+## Running the unit tests
 
 To test dependency installation and run the tests:
 
