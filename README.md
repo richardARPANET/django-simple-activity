@@ -24,8 +24,33 @@ INSTALLED_APPS = (
 
 ## Example Usage
 
-The best examples are in the [tests](https://github.com/richardasaurus/django-simple-activity/blob/master/src/tests/test_activity.py).
 
+#### Creating Activity Actions
+
+
+```python
+from activity.logic import add_action, get_action_text
+user = User.objects.filter(username='bob')
+
+# actor and verb example
+action = add_action(actor=user, verb='joined the website!')
+print(get_action_text(action)) -> 'bob joined the website!'
+
+# actor, verb and action
+another_user = User.objects.filter(username='jessica')
+action = add_action(
+    actor=user,
+    verb='made friends with',
+    action=another_user,
+    timestamp=timezone.now() - timedelta(days=2)
+)
+print(get_action_text(action)) -> 'bob made friends with jessica 2 days ago'
+
+```
+Further examples are in the [tests](https://github.com/richardasaurus/django-simple-activity/blob/master/src/tests/test_activity.py).
+
+
+#### Retrieving Activity Actions
 
 Get **all** Activity Action records:
 
