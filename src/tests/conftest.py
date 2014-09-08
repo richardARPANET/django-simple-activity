@@ -1,60 +1,9 @@
 import os
-import hashlib
-import string
-import random
-from os.path import abspath, basename, dirname
-
-from django.core.exceptions import ImproperlyConfigured
+from os.path import abspath, dirname
 from importd import d
-ugettext = lambda s: s
 
-
-def get_env_variable(var_name):
-    """Get the environment variable or return exception"""
-    try:
-        return os.environ[var_name]
-    except KeyError:
-        error_msg = "Set the %s env variable" % var_name
-        raise ImproperlyConfigured(error_msg)
-
-
-def get_env_bool(var_name, default=False):
-    """Get a boolean environment variable, default to False"""
-    try:
-        result = os.environ[var_name]
-    except KeyError:
-        return default
-    else:
-        if result.lower() in ['0', 'false', 'off']:
-            return False
-        return True
-
-
-def get_test_db_name():
-    md5 = hashlib.md5()
-    to_hash = os.environ.get('BUILD_TAG', b'no-tag')
-    md5.update(to_hash)
-    return md5.hexdigest()
-
-
-def gen_string(max_length):
-    return u''.join(random.choice(string.ascii_letters)
-                    for i in range(max_length))
-
-gen_string.required = ['max_length']
-
-VIDISPINE_USERNAME = 'admin'
 DJANGO_ROOT = dirname(dirname(abspath(__file__)))
-SITE_ROOT = DJANGO_ROOT
-SITE_NAME = basename(DJANGO_ROOT)
-log_folder = '/var/log/zonza/'
 DEBUG = False
-ADMINS = [
-    ['Admin', 'admin@zonza.tv'],
-]
-VIDISPINE_URL = 'http://vidi1-dev-zonza'
-VIDISPINE_PORT = '8080'
-AUTH_PROFILE_MODULE = 'users.UserProfile'
 
 
 def pytest_configure():
@@ -62,13 +11,12 @@ def pytest_configure():
         DJANGO_ROOT=dirname(dirname(abspath(__file__))),
         DEBUG=False,
         TEMPLATE_DEBUG=DEBUG,
-        MANAGERS=ADMINS,
         DATABASES={
             'default': {
                 'ENGINE': 'django.db.backends.sqlite3',
-                'NAME': 'jenzonzadb',
-                'USER': 'jenzonza',
-                'PASSWORD': 'jenzonza',
+                'NAME': 'testactivitydb',
+                'USER': 'testactivity',
+                'PASSWORD': 'testactivity',
                 'HOST': 'localhost',
                 'PORT': '5432',
             }
