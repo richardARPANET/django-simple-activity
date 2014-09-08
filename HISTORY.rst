@@ -3,7 +3,7 @@
 Release History
 ---------------
 
-0.0.1 (unreleased)
+0.1.0 (2014-09-08)
 ++++++++++++++++++
 
 * Inital release
