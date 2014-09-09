@@ -1,7 +1,6 @@
 from __future__ import unicode_literals
 from django.utils import timezone
 from django.db import models
-from django.contrib.auth.models import User
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes import generic
 from django.contrib.humanize.templatetags.humanize import naturaltime
@@ -11,7 +10,13 @@ from . querysets import ActionQueryset
 
 class Action(models.Model):
     # The object which performed the activity
-    actor = models.ForeignKey(User)
+    actor_content_type = models.ForeignKey(
+        ContentType, related_name='actor', blank=True, null=True
+    )
+    actor_object_id = models.CharField(max_length=500, blank=True, null=True)
+    actor = generic.GenericForeignKey(
+        ct_field='actor_content_type', fk_field='actor_object_id'
+    )
     # The phrase describing the action of that activity
     verb = models.CharField(max_length=500)
 
