@@ -8,18 +8,20 @@ Simple, generic, activity streams from the actions on your site.
 
 ## Installation
 
-Install using `pip`...
+1. Install using `pip`...
 
-```pip install django-simple-activity```
+    ```pip install django-simple-activity```
 
-Add `'activity'` to your `INSTALLED_APPS` setting.
+2. Add `'activity'` to your `INSTALLED_APPS` setting.
 
-```python
-INSTALLED_APPS = (
-    ...
-    'activity',
-)
-```
+    ```python
+    INSTALLED_APPS = (
+        ...
+        'activity',
+    )
+    ```
+
+3. Ensure `django.contrib.contenttypes` is above `django.contrib.auth` in your installed apps ([why? read here](http://stackoverflow.com/questions/25947951/genericforeignkey-violation-only-when-user-model-given-postgres/25949737#25949737)).
 
 
 ## Example Usage
