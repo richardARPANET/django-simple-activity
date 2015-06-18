@@ -4,6 +4,9 @@ from setuptools import setup, find_packages
 # allow setup.py to be run from any path
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
+with open('requirements.txt') as f:
+    install_requires = f.read().splitlines()
+
 setup(
     name='django-simple-activity',
     version='0.1.2.dev0',
@@ -18,8 +21,5 @@ setup(
     author='Richard O\'Dwyer',
     author_email='richard@richard.do',
     zip_safe=True,
-    install_requires=[
-        'django>=1.5.0, <1.6.0',
-        'django-model-utils>=2.2',
-    ]
+    install_requires=install_requires
 )
