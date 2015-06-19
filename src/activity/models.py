@@ -45,7 +45,7 @@ class Action(models.Model):
     @property
     def time_ago(self):
         # human readable time ago, e.g. 5 hours ago
-        return naturaltime(self.timestamp)
+        return naturaltime(self.timestamp).replace('\xa0', ' ')
 
     class Meta:
         ordering = ('-timestamp', )
