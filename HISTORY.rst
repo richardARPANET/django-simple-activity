@@ -6,7 +6,7 @@ Release History
 0.1.2 (unreleased)
 ++++++++++++++++++
 
-- Nothing changed yet.
+- Changes to support Django 1.8
 
 
 0.1.1 (2014-09-09)
