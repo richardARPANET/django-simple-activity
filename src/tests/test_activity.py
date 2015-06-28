@@ -1,9 +1,11 @@
 from __future__ import unicode_literals
 from datetime import timedelta
+
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.test import TestCase
 from django.contrib.auth.models import Group
+
 from activity.models import Action
 from activity.logic import get_action_text, get_action_html, add_action
 
