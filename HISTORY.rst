@@ -3,10 +3,10 @@
 Release History
 ---------------
 
-0.2.1 (unreleased)
+0.3.0 (unreleased)
 ++++++++++++++++++
 
-- Nothing changed yet.
+- Adds indexes to Action model
 
 
 0.2.0 (2015-06-28)
