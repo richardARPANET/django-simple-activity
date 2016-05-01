@@ -32,14 +32,14 @@ Simple, generic, activity streams from the actions on your site.
 
 ```python
 from activity.logic import add_action, get_action_text
-user = User.objects.filter(username='bob')
+user = User.objects.get(username='bob')
 
 # actor and verb example
 action = add_action(actor=user, verb='joined the website!')
 print(get_action_text(action)) -> 'bob joined the website!'
 
 # actor, verb and action
-another_user = User.objects.filter(username='jessica')
+another_user = User.objects.get(username='jessica')
 action = add_action(
     actor=user,
     verb='made friends with',
