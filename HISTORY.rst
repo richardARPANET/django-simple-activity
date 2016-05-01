@@ -6,7 +6,7 @@ Release History
 0.3.1 (unreleased)
 ++++++++++++++++++
 
-- Nothing changed yet.
+- Fixes requirement range for 3rd party package "django-model-utils"
 
 
 0.3.0 (2015-09-16)
