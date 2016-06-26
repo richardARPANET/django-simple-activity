@@ -6,7 +6,10 @@ Release History
 0.3.2 (unreleased)
 ++++++++++++++++++
 
-- Nothing changed yet.
+- Removes Django 1.7 support
+- Adds support for Django 1.8+
+- Adds support for Python 2.7 to 3.5
+- Removes dependency on django-model-utils
 
 
 0.3.1 (2016-05-01)
