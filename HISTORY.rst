@@ -3,7 +3,7 @@
 Release History
 ---------------
 
-0.3.2 (unreleased)
+1.0.0 (2016-06-26)
 ++++++++++++++++++
 
 - Removes Django 1.7 support
