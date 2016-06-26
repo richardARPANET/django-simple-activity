@@ -1,10 +1,11 @@
 from __future__ import unicode_literals
+
 from django.utils import timezone
 from django.db import models
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.humanize.templatetags.humanize import naturaltime
-from model_utils.managers import PassThroughManager
+
 from . querysets import ActionQueryset
 
 
@@ -38,7 +39,7 @@ class Action(models.Model):
     is_public = models.BooleanField(default=True, db_index=True)
     timestamp = models.DateTimeField(
         default=timezone.now, blank=True, db_index=True)
-    objects = PassThroughManager.for_queryset_class(ActionQueryset)()
+    objects = ActionQueryset.as_manager()
 
     @property
     def time_ago(self):
