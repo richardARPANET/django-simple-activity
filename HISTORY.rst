@@ -3,7 +3,7 @@
 Release History
 ---------------
 
-1.1.0 (unreleased)
+1.1.0 (2018-01-20)
 ++++++++++++++++++
 
 - Adds support for Django >=2.0
