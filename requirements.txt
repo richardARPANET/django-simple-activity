@@ -1,2 +1,2 @@
-django>=1.7.0,<1.11
+django>=1.10.0
 wheel
