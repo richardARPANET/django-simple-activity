@@ -12,7 +12,8 @@ from . querysets import ActionQueryset
 class Action(models.Model):
     # The object which performed the activity
     actor_content_type = models.ForeignKey(
-        ContentType, related_name='actor', blank=True, null=True
+        ContentType, related_name='actor', blank=True, null=True,
+        on_delete=models.CASCADE,
     )
     actor_object_id = models.CharField(
         max_length=500, blank=True, null=True, db_index=True)
@@ -22,7 +23,8 @@ class Action(models.Model):
 
     # The object which is linked to the action (e.g. liked, favourited)
     action_content_type = models.ForeignKey(
-        ContentType, related_name='action', blank=True, null=True
+        ContentType, related_name='action', blank=True, null=True,
+        on_delete=models.CASCADE,
     )
     action_object_id = models.CharField(
         max_length=500, blank=True, null=True, db_index=True)
@@ -30,7 +32,8 @@ class Action(models.Model):
 
     # The object on which the action was performed upon (e.g. a fb page)
     target_content_type = models.ForeignKey(
-        ContentType, related_name='target', blank=True, null=True
+        ContentType, related_name='target', blank=True, null=True,
+        on_delete=models.CASCADE,
     )
     target_object_id = models.CharField(
         max_length=500, blank=True, null=True, db_index=True)
