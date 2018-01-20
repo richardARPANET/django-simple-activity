@@ -3,7 +3,7 @@
 .cache
 # C extensions
 *.so
-
+.vscode
 # Packages
 *.egg
 *.egg-info
