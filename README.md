@@ -6,6 +6,8 @@ django-simple-activity
 
 Simple, generic, activity streams from the actions on your site.
 
+Supports Django versions 1.7.x to 1.10.x
+
 ## Installation
 
 1. Install using `pip`...
