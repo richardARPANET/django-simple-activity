@@ -1,12 +1,14 @@
 django-simple-activity
 ======================
 
+[![PyPI](https://img.shields.io/pypi/v/django-simple-activity.svg)](https://pypi.python.org/pypi/django-simple-activity)
+[![Python Versions](https://img.shields.io/pypi/pyversions/django-simple-activity.svg)](https://pypi.python.org/pypi/django-simple-activity)
 [![Build Status](https://travis-ci.org/richardasaurus/django-simple-activity.png?branch=master)](https://travis-ci.org/richardasaurus/django-simple-activity)
-[![Downloads](https://pypip.in/d/django-simple-activity/badge.png)](https://crate.io/packages/django-simple-activity/)
+
 
 Simple, generic, activity streams from the actions on your site.
 
-Supports Django versions 1.7.x to 1.10.x
+Supports Django versions 1.10.x, 1.11.x, 2.0 and above.
 
 ## Installation
 
