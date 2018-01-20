@@ -2,7 +2,6 @@ django-simple-activity
 ======================
 
 [![PyPI](https://img.shields.io/pypi/v/django-simple-activity.svg)](https://pypi.python.org/pypi/django-simple-activity)
-[![Python Versions](https://img.shields.io/pypi/pyversions/django-simple-activity.svg)](https://pypi.python.org/pypi/django-simple-activity)
 [![Build Status](https://travis-ci.org/richardasaurus/django-simple-activity.png?branch=master)](https://travis-ci.org/richardasaurus/django-simple-activity)
 
 
